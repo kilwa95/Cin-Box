@@ -1,9 +1,7 @@
-const GenresIdPage = ({ params }) => {
-  return (
-    <div>
-      <h1>Genres page with id : {params.id}</h1>
-    </div>
-  );
+import SearchResults from '@/app/movies/(searche)/SearchResults';
+
+const GenresIdPage = ({ params, searchParams }) => {
+  return <SearchResults searchParams={searchParams} genreId={params.id} />;
 };
 
 export default GenresIdPage;
