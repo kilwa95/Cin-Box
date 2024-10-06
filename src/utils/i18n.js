@@ -7,19 +7,18 @@ export const defaultLocale = 'fr';
 export const getPreferredLocale = (request) => {
   const headers = { 'accept-language': request.headers.get('accept-language') };
   const languages = new Negotiator({ headers }).languages();
-
   return match(languages, availableLocales, defaultLocale);
 };
 
 export const getLocaleUrlToRedirect = (request) => {
   const pathname = request.nextUrl.pathname;
   const pathnameIsMissingLocale = availableLocales.every(
-    (locale) => !pathname.startsWith(`/${locale}`) && pathname !== `/${locale}`
+    (local) => !pathname.startsWith(`/${local}`) && pathname !== `/${local}`
   );
 
   if (pathnameIsMissingLocale) {
-    const locale = getPreferredLocale(request);
+    const local = getPreferredLocale(request);
 
-    return new URL(`/${locale}/${pathname}`, request.url);
+    return new URL(`/${local}/${pathname}`, request.url);
   }
 };

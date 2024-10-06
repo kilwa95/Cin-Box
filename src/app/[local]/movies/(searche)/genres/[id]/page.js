@@ -1,7 +1,10 @@
 import SearchResults from '@/app/movies/(searche)/SearchResults';
 
 const GenresIdPage = ({ params, searchParams }) => {
-  return <SearchResults searchParams={searchParams} genreId={params.id} />;
+  const { id, local } = params;
+  return (
+    <SearchResults searchParams={searchParams} genreId={id} local={local} />
+  );
 };
 
 export default GenresIdPage;

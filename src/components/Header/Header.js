@@ -3,23 +3,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import MovieSearch from '../MovieSearch/MovieSearch';
+import LanguageSelector from '@/components/language-selector/LanguageSelector';
 
-const Header = () => {
+const Header = ({ local }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
         <p>
-          <Link href="/">MovieApp</Link>
+          <Link href={`/${local}`}>MyMovieApp</Link>
         </p>
       </div>
       <div className={styles.navigation}>
         <nav>
           <ul>
             <li>
-              <Link href="/series">Séries</Link>
+              <Link href={`/${local}/series`}>Séries</Link>
             </li>
             <li>
-              <Link href="/movies">Films</Link>
+              <Link href={`/${local}/movies`}>Films</Link>
             </li>
           </ul>
         </nav>
@@ -27,6 +28,7 @@ const Header = () => {
         <div>
           <FontAwesomeIcon icon={faUser} />
         </div>
+        <LanguageSelector />
       </div>
     </header>
   );

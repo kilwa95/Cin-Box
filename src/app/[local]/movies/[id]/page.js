@@ -7,8 +7,7 @@ import SimilarMovies from '@/components/SimilarMovies/SimilarMovies';
 export const dynamic = 'force-static';
 export const revalidate = 3600;
 
-const MovieIdPage = async ({ params }) => {
-  const { id, local } = params;
+const MovieIdPage = async ({ params: { id, local } }) => {
   const movie = await getMovieByPath(`/movie/${id}`, [], local);
 
   if (!movie.original_title) {
@@ -19,7 +18,7 @@ const MovieIdPage = async ({ params }) => {
     <div>
       <MovieDetails movie={movie} />
       <Suspense fallback={<p>Chargement ...</p>}>
-        <SimilarMovies movieId={movie.id} />
+        <SimilarMovies movieId={movie.id} local={local} />
       </Suspense>
     </div>
   );

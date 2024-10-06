@@ -10,7 +10,7 @@ const Genres = async ({ local }) => {
       <div className={styles.container}>
         {genres.map((genre) => (
           <div key={genre.id} className={styles.genre}>
-            <Link href={`/movies/genres/${genre.id}`}>
+            <Link href={`/${local}/movies/genres/${genre.id}`}>
               <p>{genre.name}</p>
             </Link>
           </div>

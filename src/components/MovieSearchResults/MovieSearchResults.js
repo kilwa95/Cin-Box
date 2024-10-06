@@ -1,13 +1,17 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 import styles from './MovieSearchResults.module.scss';
 
-const MovieSearchResults = ({ movieResults }) => {
+const MovieSearchResults = ({ movieResults, local }) => {
   return (
     <div className={styles.searchResults}>
       {movieResults.map((movie) => (
         <div key={movie.id}>
-          <Link href={`/movies/${movie.id}`}>
+          <Link
+            href={`/${local}/movies/${movie.id}`}
+            onMouseDown={(e) => e.preventDefault()}
+          >
             <Image
               width={90}
               height={50}
