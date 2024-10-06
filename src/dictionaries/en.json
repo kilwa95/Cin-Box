@@ -1,0 +1,14 @@
+{
+  "popular": {
+    "title": "Most popular"
+  },
+  "genres": {
+    "title": "Browse by genres"
+  },
+  "series": {
+    "title": "series"
+  },
+  "movies": {
+    "title": "movies"
+  }
+}

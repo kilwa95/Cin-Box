@@ -5,7 +5,7 @@ import { DebounceInput } from 'react-debounce-input';
 import MovieSearchResults from '../MovieSearchResults/MovieSearchResults';
 import styles from './MovieSearch.module.scss';
 
-const MovieSearch = () => {
+const MovieSearch = ({ local }) => {
   const [movieResults, setMovieResults] = useState([]);
   const [hasFocus, setHasFocus] = useState(false);
 
@@ -26,7 +26,7 @@ const MovieSearch = () => {
         onFocus={() => setHasFocus(true)}
       />
       {movieResults.length > 0 && hasFocus && (
-        <MovieSearchResults movieResults={movieResults} />
+        <MovieSearchResults movieResults={movieResults} local={local} />
       )}
     </div>
   );

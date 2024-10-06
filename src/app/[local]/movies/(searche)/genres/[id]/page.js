@@ -1,4 +1,4 @@
-import SearchResults from '@/app/movies/(searche)/SearchResults';
+import SearchResults from '../../SearchResults';
 
 const GenresIdPage = ({ params, searchParams }) => {
   const { id, local } = params;
