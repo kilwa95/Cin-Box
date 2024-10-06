@@ -8,7 +8,8 @@ export const dynamic = 'force-static';
 export const revalidate = 3600;
 
 const MovieIdPage = async ({ params }) => {
-  const movie = await getMovieByPath(`/movie/${params.id}`);
+  const { id, local } = params;
+  const movie = await getMovieByPath(`/movie/${id}`, [], local);
 
   if (!movie.original_title) {
     return notFound();

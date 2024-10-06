@@ -2,8 +2,8 @@ import { getMovieByPath } from '@/utils/movieClient';
 import MediaCard from '../media-card/MediaCard';
 import styles from './Popular.module.scss';
 
-const Popular = async () => {
-  const { results } = await getMovieByPath('/movie/popular');
+const Popular = async ({ local }) => {
+  const { results } = await getMovieByPath('/movie/popular', [], local);
   const popularMovies = results.slice(0, 6);
 
   return (
