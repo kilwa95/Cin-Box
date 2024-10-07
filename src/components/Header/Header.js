@@ -25,11 +25,16 @@ const Header = async ({ local }) => {
             <li>
               <Link href={`/${local}/movies`}>{i18n.movies.title}</Link>
             </li>
+            <li>
+              <Link href={`/${local}/signup`}>{i18n.signup.title}</Link>
+            </li>
           </ul>
         </nav>
         <MovieSearch local={local} />
         <div>
-          <FontAwesomeIcon icon={faUser} />
+          <Link href={`/${local}/user/profile`}>
+            <FontAwesomeIcon icon={faUser} />
+          </Link>
         </div>
         <LanguageSelector />
       </div>

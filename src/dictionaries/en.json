@@ -10,5 +10,8 @@
   },
   "movies": {
     "title": "movies"
+  },
+  "signup": {
+    "title": "signup"
   }
 }

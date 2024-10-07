@@ -10,5 +10,8 @@
   },
   "movies": {
     "title": "films"
+  },
+  "signup": {
+    "title": "inscription"
   }
 }
