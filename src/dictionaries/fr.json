@@ -13,5 +13,8 @@
   },
   "signup": {
     "title": "inscription"
+  },
+  "favoriteMovies": {
+    "title": "Liste des films aimés"
   }
 }

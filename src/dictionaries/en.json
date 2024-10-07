@@ -13,5 +13,8 @@
   },
   "signup": {
     "title": "signup"
+  },
+  "favoriteMovies": {
+    "title": "List of favorite movies"
   }
 }
